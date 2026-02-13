@@ -27,3 +27,6 @@ logs/
 ha_config/.storage/
 ha_config/secrets.yaml
 ha_config/home-assistant_v2.db
+
+# Agent
+.agent/
