@@ -13,7 +13,10 @@ Hearth is a local, privacy-focused AI assistant for your home. It integrates Hom
 - Docker & Docker Compose
 - Ollama (running locally or on network) with `llama3.2` model pulled.
 - Home Assistant (running or accessible).
-- Telegram Bot Token so you can talk to it.
+- **Telegram Bot Token**: Create one via [@BotFather](https://t.me/BotFather) on Telegram.
+  1.  Send `/newbot`.
+  2.  Name it (e.g., "My Home AI").
+  3.  Get the HTTP API Token.
 
 ## Quick Start
 
@@ -53,9 +56,10 @@ Hearth is a local, privacy-focused AI assistant for your home. It integrates Hom
    - Admin can use `/permit <user_id>` to allow other family members.
 
 ## Architecture
-- **Hearth Bot**: Python (Aiogram 3.x).
-- **Memory**: ChromaDB (Vector Store) + SQLite (User Whitelist).
-- **AI Provider**: Switchable between Ollama (Local) and Gemini (Cloud) in `.secrets`.
+- **hearth_bot/**: The main Python application (Telegram Bot + Memory Logic + Ollama Client). This is the brain.
+- **ha_components/**: Custom Home Assistant integration (optional) for tighter LLM coupling.
+- **ha_config/**: Example configuration for Home Assistant (Mercedes component etc).
+- **core/**: (Removed).
 
 ## License
 MIT License.
