@@ -30,3 +30,12 @@ ha_config/home-assistant_v2.db
 
 # Agent
 .agent/
+
+# Internal / Junk
+spec.md
+core/
+ha_config/custom_components/mbapi2020/
+ha_components/hearth_assistant/temp_check
+requirements.txt
+tests/
+test_*.py
