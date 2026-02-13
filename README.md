@@ -32,7 +32,11 @@ Hearth is a local, privacy-focused AI assistant for your home. It integrates Hom
    cp .env.example .secrets
    nano .secrets
    ```
-   *Get your `HASS_TOKEN` from Home Assistant Profile -> Long-Lived Access Tokens.*
+   *Edit the file to set:*
+   - `TELEGRAM_TOKEN`: The token from BotFather.
+   - `HASS_URL`: Your Home Assistant address (e.g. http://192.168.1.5:8123).
+   - `HASS_TOKEN`: Long-Lived Access Token from HA Profile.
+   - `ADMIN_ID`: Your Telegram User ID (get it via `@userinfobot` or run the bot and use `/id`).
 
 3. **Install Dependencies (Ollama)**
    Ensure Ollama is running and has the model:
