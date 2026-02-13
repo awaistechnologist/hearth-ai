@@ -1,0 +1,32 @@
+services:
+  # 1. Home Assistant (The Brain & UI)
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ./ha_config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro # Bluetooth/Hardware access
+    restart: unless-stopped
+    privileged: true
+    network_mode: host # REQUIRED for discovery & mDNS
+    environment:
+      - TZ=America/Los_Angeles # Change if needed
+
+  # 2. Hearth Bot (Family AI)
+  hearth-bot:
+    build: ./hearth_bot
+    container_name: hearth_bot
+    restart: unless-stopped
+    volumes:
+      - ./hearth_data:/app/hearth_data
+    env_file:
+      - .secrets
+    environment:
+      - TZ=America/Los_Angeles
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          memory: 4096M

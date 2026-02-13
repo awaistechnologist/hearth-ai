@@ -1,0 +1,22 @@
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.core import HomeAssistant
+
+from .const import DOMAIN
+
+async def async_setup(hass: HomeAssistant, config: dict) -> bool:
+    return True
+
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    # Forward to the conversation module which handles registration
+    # Note: Logic moved to conversation.py registration or kept here.
+    # Actually, the standard pattern connects the two.
+    # Let's import the setup from conversation.py or just do it here.
+    # Re-using the logic I put in conversation.py via import is cleaner,
+    # BUT simpler: just import the setup function from .conversation if it existed,
+    # or define it here.
+    
+    # Correction: I put the setup logic in `__init__` in previous steps? 
+    # Let's check my previous tool call.
+    # Ah, I haven't written __init__.py yet! (Wait, I thought I did?)
+    # Let's check the history.
+    pass 

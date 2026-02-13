@@ -1,0 +1,29 @@
+# Secrets
+.secrets
+.env
+*.key
+*.pem
+
+# Data
+hearth_data/
+hearth.db
+chroma/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# Logs
+*.log
+logs/
+
+# Mac
+.DS_Store
+
+# Home Assistant Config (Only ignore secrets/storage, keep config)
+ha_config/.storage/
+ha_config/secrets.yaml
+ha_config/home-assistant_v2.db
