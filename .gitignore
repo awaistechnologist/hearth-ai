@@ -39,3 +39,4 @@ ha_components/hearth_assistant/temp_check
 requirements.txt
 tests/
 test_*.py
+hearth_test/
