@@ -66,4 +66,4 @@ Hearth is a local, privacy-focused AI assistant for your home. It integrates Hom
 - **core/**: (Removed).
 
 ## License
-MIT License.
+[MIT License](LICENSE).
